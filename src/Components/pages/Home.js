@@ -4,10 +4,10 @@ import Login from '../layouts/Login';
 
 const Home =() => {
     return (
-        <div className="container">
-            <h1>Home</h1>
-            <Login/>
-            {/* <RegisterForm/> */}
+        <div className="container home">
+            <div className="mt-5">
+                <Login/>
+            </div>
         </div>
     )
 }

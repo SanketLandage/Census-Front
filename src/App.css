@@ -40,3 +40,6 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border: none
 }
+body{
+  background-image: linear-gradient(to right, rgb(217, 248, 43,0.15) , rgb(3, 143, 124,0.1));
+}
