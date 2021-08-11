@@ -4,7 +4,10 @@ import Navbar from './Components/layouts/Navbar';
 import {BrowserRouter as Router , Route , Switch} from 'react-router-dom';
 import Home from './Components/pages/Home';
 import About from './Components/pages/About';
-import RegisterForm from './Components/layouts/signup/RegisterForm';
+import Register from './Components/layouts/signup/Register';
+import UserProfile from './Components/pages/UserProfile';
+import AdminProfile from './Components/pages/AdminProfile';
+import NotFound from './Components/pages/NotFound';
 
 function App() {
   return (
@@ -14,7 +17,11 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/about" component={About}/>
-            <Route exact path="/register" component={RegisterForm}/>
+            <Route exact path="/register" component={Register}/>
+            <Route exact path= "/adminprofile" component={AdminProfile}/>
+            <Route exact path="/userprofile" component={UserProfile}/>
+            <Route exact path="/notfound" component={NotFound}/>
+            
           </Switch>      
       </div>
     </Router>
