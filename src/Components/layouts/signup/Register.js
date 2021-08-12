@@ -93,7 +93,7 @@ class Register extends Component {
             console.log(res);
         }).catch(e=>{
             console.log(e.message);
-        });
+        }); //
         this.setState({
             firstName: "",
             lastName: "",
