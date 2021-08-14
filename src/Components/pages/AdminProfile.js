@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import AdminOps from './AdminOps';
 
 const AdminProfile= (props) => {
     const location = useLocation();
@@ -25,6 +26,7 @@ const AdminProfile= (props) => {
                     <h2>Buttons for operations</h2>
                 </p>
             </div>
+            <AdminOps adminData={adminData}/>
             
         </div>
     )

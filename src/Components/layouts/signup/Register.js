@@ -10,16 +10,23 @@ class Register extends Component {
         this.state = {
             firstName: "",
             lastName: "",
-            password: "",
             gender: "",
-            age : 0,
-            numOfKids : 0,
             email : "",
+            password: "",
+            numOfKids : 0,
             city : "",
-            education : "",
+            educationalQualification : "",
+            age : 0,
             role : "USER"
         }
-        this.handleSubmit=this.handleSubmit.bind(this)
+        this.handleSubmit=this.handleSubmit.bind(this);
+        this.firsthandler = this.firsthandler.bind(this);
+        this.lasthandler = this.lasthandler.bind(this);
+        this.passwordhandler = this.passwordhandler.bind(this);
+        this.genderhandler = this.genderhandler.bind(this);
+        this.cityHandler = this.cityHandler.bind(this);
+        this.ageHandler = this.ageHandler.bind(this);
+        this.kidHandler = this.kidHandler.bind(this);
     }
 
     firsthandler = (event) => {
@@ -58,7 +65,7 @@ class Register extends Component {
 
     educationHandler = e => {
         this.setState({
-            education: e.target.value
+            educationalQualification: e.target.value
         })
     }
 
@@ -84,28 +91,38 @@ class Register extends Component {
             password : this.state.password,
             numOfKids : this.state.numOfKids,
             city: this.state.city,
-            educationalQualification : this.state.education,
+            educationalQualification : this.state.educationalQualification,
             age : this.state.age,
             role : this.state.role
         }
-        axios.post('http://localhost:8082/userRegister' ,user)
+        axios.post('http://localhost:8082/registration' ,user)
         .then(res=>{
-            console.log(res);
+            console.log(res.data);
+            console.log(res.status);
+            if(res.status === 200){
+                this.props.history.push('/');
+            }
+            
         }).catch(e=>{
             console.log(e.message);
+            if(e.message === "Request failed with status code 409"){
+                alert("User With Entered Email already Exists");
+            }
+            
         }); //
         this.setState({
             firstName: "",
             lastName: "",
-            password: '',
             gender: "",
-            age : 0,
+            email : "",
+            password: "",
             numOfKids : 0,
-            email : '',
             city : "",
-            education : ""
+            educationalQualification : "",
+            age : 0
         })
      event.preventDefault();
+     
         
     }
 
@@ -204,10 +221,10 @@ class Register extends Component {
                                         <div className="col-sm-8 col-12">
                                             <select onChange={this.educationHandler} defaultValue="Education">
                                             <option defaultValue>Education</option>
-                                            <option value="PG">PG and Above</option>
-                                            <option value="UG">Under Graduation</option>
-                                            <option value="College">Junior College</option>
-                                            <option value="School">Schooling</option>
+                                            <option value="PostGraduation">PG and Above(Masters)</option>
+                                            <option value="UnderGraduation">Under Graduation (Bachelors)</option>
+                                            <option value="JuniorCollege">Junior College (12th)</option>
+                                            <option value="HighSchool">School (10th)</option>
                                             </select><br />
                                         </div>
                                     </div>

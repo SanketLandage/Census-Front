@@ -45,7 +45,7 @@ export class AddMember extends Component {
         })
     };
     
-    handleSubmit = e =>{
+    handleSubmit = async e =>{
         this.setState({user : this.props.userData.uid});
         e.preventDefault();
         console.log(this.props.userData.uid);
@@ -59,14 +59,16 @@ export class AddMember extends Component {
             education : this.state.education,
             user : this.props.userData.uid
         };
-        axios.post('http://localhost:8082/addmember' , famMember)
+       await axios.post('http://localhost:8082/addmember' , famMember)
         .then(res=>{
             console.log(res.data);
         })
     }
-
+    
+    
     
     render() {
+        
         return (
             <div>
                 <div className="container">
@@ -116,6 +118,7 @@ export class AddMember extends Component {
                                                 <option value="Father">Father</option>
                                                 <option value="Mother">Mother</option>
                                                 <option value="Wife">Wife</option>
+                                                <option value="Husband">Husband</option>
                                                 <option value="Brother">Brother</option>
                                                 <option value="Sister">Sister</option>
                                                 <option value="Son">Son</option>
@@ -129,7 +132,7 @@ export class AddMember extends Component {
                                             <label>Age :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <input type="text" placeholder="Age" onChange={this.agehandler}/><br />
+                                            <input type="text" placeholder="Age" onChange={this.agehandler} max="110" min="1" required/><br />
                                         </div>
                                     </div>
 
@@ -140,10 +143,10 @@ export class AddMember extends Component {
                                         <div className="col-sm-8 col-12">
                                             <select  defaultValue="Education" onChange={this.educationhandler}>
                                             <option defaultValue>Education</option>
-                                            <option value="PG">PG and Above</option>
-                                            <option value="UG">Under Graduation</option>
-                                            <option value="College">Junior College</option>
-                                            <option value="School">Schooling</option>
+                                            <option value="PostGraduation">PG and Above(Masters)</option>
+                                            <option value="UnderGraduation">Under Graduation(Bachelors)</option>
+                                            <option value="JuniorCollege">Junior College(12th)</option>
+                                            <option value="HighSchool">High School(10th)</option>
                                             </select><br />
                                         </div>
                                     </div>
@@ -151,6 +154,12 @@ export class AddMember extends Component {
                                 </form>
                             </div>
                         </div>
+                    </div>
+                    <hr />
+                    <div className="card">
+                        { 
+
+                        }
                     </div>
                 </div>
             </div>

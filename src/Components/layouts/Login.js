@@ -44,7 +44,7 @@ export class Login extends Component{
         })
         .catch(err => {
             console.log(err.message);
-            if(err.message === "Request failed with status code 405"){
+            if(err.message === "Request failed with status code 405" || err.message === "Request failed with status code 400"){
                 this.props.history.push('/notfound' );
             }
         });
