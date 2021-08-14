@@ -87,7 +87,6 @@ export class Login extends Component{
                                 </div>
                             </div>
                             <div className="form-group mt-2 text-center">
-                                
                                     <button  type="submit" className="btn btn-dark btn-block"  >Login</button>
                             </div>
                             <hr />
