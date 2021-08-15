@@ -2,6 +2,8 @@ import React from 'react';
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import AdminOps from './AdminOps';
+import ListUser from '../layouts/ListUser';
+import SameCity from '../layouts/SameCity';
 
 const AdminProfile= (props) => {
     const location = useLocation();
@@ -22,11 +24,19 @@ const AdminProfile= (props) => {
                     village/town/city. Information related to their age, educational qualifications and kids. </p>
                 <hr class="my-4"/>
                 <p></p>
-                <p class="lead">
-                    <h2>Buttons for operations</h2>
-                </p>
+                
             </div>
+            <ListUser/>
+            <hr />
+            <h2 className="text-center mt-4 mb-4">People of Age between 10-20</h2>
             <AdminOps adminData={adminData}/>
+            <hr />
+                <div className="container mt-4">
+                    <h1 className="text-center mb-4">Type city Name to get Users from Same City</h1>
+                    <SameCity/>
+                </div>
+            
+            <hr />
             
         </div>
     )
