@@ -61,7 +61,7 @@ class ListUser extends Component {
   render() {
     return (
       <div>
-        <h2 className="text-center">Users List</h2>
+        <h2 className="text-center">List of All users</h2>
         {/* <div className="row">
           <Button color="warning" onClick={this.addUser}>
             Add User

@@ -26,16 +26,15 @@ const AdminProfile= (props) => {
                 <p></p>
                 
             </div>
-            <ListUser/>
-            <hr />
-            <h2 className="text-center mt-4 mb-4">People of Age between 10-20</h2>
+            <h2 className="text-center mt-4 mb-4">Information of people whose age is between 10-20 years</h2>
             <AdminOps adminData={adminData}/>
             <hr />
                 <div className="container mt-4">
-                    <h1 className="text-center mb-4">Type city Name to get Users from Same City</h1>
+                    <h2 className="text-center mb-4">Get information of prople residing in same city</h2>
                     <SameCity/>
                 </div>
-            
+            <hr />
+            <ListUser/>
             <hr />
             
         </div>
