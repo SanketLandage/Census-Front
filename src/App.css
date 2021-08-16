@@ -43,3 +43,7 @@
 body{
   background-image: linear-gradient(to right, rgba(21, 83, 112, 0.37) , rgba(153, 146, 79, 0.322));
 }
+
+.view{
+  font-size : 17px;
+}

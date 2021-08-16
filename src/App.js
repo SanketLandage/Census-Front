@@ -13,6 +13,9 @@ import ViewUser from './Components/layouts/ViewUser';
 import AddUser from './Components/layouts/AddUser';
 import logout from './Components/pages/logout';
 import Footer from './Components/layouts/Footer';
+import EditUser from './Components/pages/user/EditUser';
+import AddUsers from './Components/pages/user/AddUsers';
+
 function App() {
   return (
     <Router>
@@ -26,9 +29,11 @@ function App() {
             <Route exact path="/userprofile" component={UserProfile}/>
             <Route exact path="/notfound" component={NotFound}/>
             <Route exact path="/listUser" component={ListUser}/>
-            <Route exact path="/viewUser" component={ViewUser}/>
+            <Route exact path="/viewUser/:uid" component={ViewUser}/>
             <Route exact path="/addUser/_add" component={AddUser}/>
             <Route exact path="/logout" component={logout} />
+            <Route exact path="/userprofile/edituser/:id" component={EditUser}/>
+            <Route exact path="/userprofile/addUser/:id" component={AddUsers}/>
           </Switch>   
           <Footer/>   
       </div>

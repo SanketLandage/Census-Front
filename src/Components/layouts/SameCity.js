@@ -39,12 +39,15 @@ function SameCity() {
                 <div className="col-12 col-sm-6 offset-sm-2">
                     <input class="form-control" type="text" name="search" placeholder="Type city"  onChange={onSearchChange}/>
                 </div>
-                <div className="col-12 col-sm-2 text-center">
-                    <button className="btn btn-dark " onClick={onSubmitCity}>Get Users</button>
+                <div className="row">
+                    <div className="col-12 col-sm-3 text-center mx-3">
+                        <button className="btn btn-dark " onClick={onSubmitCity}>Get Users</button>
+                    </div>
+                    <div className="col-12 col-sm-3 text-center mx-3">
+                        <button className="btn btn-dark " onClick={onClear}>Clear</button>
+                    </div>
                 </div>
-                <div className="col-12 col-sm-2 text-center">
-                    <button className="btn btn-dark " onClick={onClear}>Clear</button>
-                </div>
+                
             </div>
             <div className="mt-3">
                 <div style={userStyle}>

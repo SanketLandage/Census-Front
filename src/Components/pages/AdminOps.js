@@ -7,9 +7,11 @@ export class AdminOps extends Component {
         this.state = {
             targetMem:[] 
         }
+        this.getUsers = this.getUsers.bind(this);
+        this.onClear = this.onClear.bind(this);
     }
     
-    componentDidMount(){
+    getUsers(){
         axios.get('http://localhost:8082/getMembersByAgeGroup')
         .then(res => {
             console.log(res.data);
@@ -18,6 +20,9 @@ export class AdminOps extends Component {
         }).catch(err =>{
             console.log(err.message); //
         });
+    }
+    onClear(){
+        this.setState({targetMem : []});
     }
     // getTargetUsers(){
     //     axios.get('http://localhost:8082/getUsersByAgeGroup')
@@ -29,6 +34,19 @@ export class AdminOps extends Component {
     // }
     render() {
         return (
+            <div>
+            <div className="row ">
+                    <div className="col-auto offset-sm-5 my-3">
+                        <div className="text-center">
+                            <button className="btn btn-dark" onClick={this.getUsers}>Get Info</button>
+                        </div>
+                    </div>
+                    <div className="col-auto my-3">
+                        <div className="text-center">
+                            <button className="btn btn-primary" onClick={this.onClear}>Clear</button>
+                        </div>
+                    </div>
+                </div>
             <div style={userStyle}>
                 {this.state.targetMem.map(member => (
                     <div className="card bg-light">
@@ -48,6 +66,7 @@ export class AdminOps extends Component {
                         </div>
                     </div>
                 ))}
+            </div>
             </div>
         )
     }

@@ -157,11 +157,7 @@ export class AddMember extends Component {
                         </div>
                     </div>
                     <hr />
-                    <div className="card">
-                        { 
-
-                        }
-                    </div>
+                    
                 </div>
             </div>
         )

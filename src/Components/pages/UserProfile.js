@@ -2,7 +2,7 @@ import React from 'react';
 import AddMember  from '../layouts/AddMember';
 import MembersList  from '../layouts/MembersList';
 
-import { useLocation , useHistory} from "react-router-dom";
+import { useLocation , useHistory, Link} from "react-router-dom";
 import axios from 'axios';
 
 function UserProfile() {
@@ -26,6 +26,7 @@ function UserProfile() {
     }
 
     const userData = location.state.detail;
+    
     
     
     return (
@@ -52,6 +53,7 @@ function UserProfile() {
             <div className="row">
                 <div className="col-sm-4 col-12">
                     <AddMember userData={userData} />
+                    
                 </div>
                 <div className="col-sm-8 col-12">
                     <MembersList userData={userData} />
@@ -62,3 +64,4 @@ function UserProfile() {
 }
 
 export default UserProfile;
+

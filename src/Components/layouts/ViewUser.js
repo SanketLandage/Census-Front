@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AdminService from '../AdminService'
-
+//import axios from 'axios';
 
 
 class ViewUser extends Component {
@@ -9,67 +9,93 @@ class ViewUser extends Component {
 
         this.state = {
             uid: this.props.match.params.uid,
-            user : {}
+            user : [],
+            member : []
 
         }
+        this.back = this.back.bind(this);
     }
 
     componentDidMount(){
        AdminService.getUserById(this.state.uid).then( res => {
             this.setState({user: res.data});
+            console.log(res.data);
         })
+        
     }
 
-    // back(){
-    //     this.props.history.push
+    // getFamMmber(){
+    //     axios.get(`http://localhost:8082/getAllMembers/${this.state.user.uid}`)
+    //     .then(res => {
+    //         console.log(res.data);
+    //         this.setState({member :res.data});
+    //     }).catch(err =>{
+    //         console.log(err.message);
+    //     })
     // }
+
+    back(){
+        this.props.history.push('/adminprofile');
+    }
 
     render() {
         return (
-            <div>
+            <div className="view">
                 <br></br>
-                <div className = "card col-md-6 offset-md-3">
-                    <h3 className = "text-center">  User Details</h3>
-                    <div className = "card-body">
+                <div className = "card cardo col-md-6 offset-md-3 ">
+                    <h3 className = "text-center"> User Details </h3>
+                    <div className = "card-body ">
                         <div className = "row">
-                            <label>  First Name: </label>
-                            <div> { this.state.user.firstName }</div>
+                            <label className="col-6 col-sm-3">  First Name  : </label>
+                            <div className="col-sm-9"> { this.state.user.firstName }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label> Last Name: </label>
-                            <div> { this.state.user.lastName }</div>
+                            <label className="col-6 col-sm-3"> Last Name :  </label>
+                            <div className="col-sm-9"> { this.state.user.lastName }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label>  Email : </label>
-                            <div> { this.state.user.email }</div>
+                            <label className="col-6 col-sm-3">  Email :  </label>
+                            <div className="col-sm-9"> { this.state.user.email }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label>  Password </label>
-                            <div> { this.state.user.password }</div>
+                            <label className="col-6 col-sm-3">  Password :  </label>
+                            <div className="col-sm-9"> { this.state.user.password }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label>  Gender </label>
-                            <div> { this.state.user.gender }</div>
+                            <label className="col-6 col-sm-3">  Gender :  </label>
+                            <div className="col-sm-9"> { this.state.user.gender }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label>  Age </label>
-                            <div> { this.state.user.age }</div>
+                            <label className="col-6 col-sm-3">  Age : </label>
+                            <div className="col-sm-9"> { this.state.user.age }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label>  Educational Qualification </label>
-                            <div> { this.state.user.education }</div>
+                            <label className="col-6 col-sm-3">  Educational Qualification :  </label>
+                            <div className="col-sm-9"> { this.state.user.educationalQualification }</div>
                         </div>
+                      
                         <div className = "row">
-                            <label>  City </label>
-                            <div> { this.state.user.city }</div>
+                            <label className="col-6 col-sm-3">  City :  </label>
+                            <div className="col-sm-9"> { this.state.user.city }</div>
                         </div>
+                        
                         <div className = "row">
-                            <label>  NumOfKids </label>
-                            <div> { this.state.user.numOfKids }</div>
+                            <label className="col-6 col-sm-3">  NumOfKids :  </label>
+                            <div className="col-sm-9"> { this.state.user.numOfKids }</div>
+                            
                         </div>
+                        
+                        
                     </div>
-                    <button className="btn btn-info" onClick={this.userDetail} >User Details</button>
-                     <button className="btn btn-danger" onClick={this.back} style={{marginLeft: "10px"}}>Back</button>
+                     <div className="text-center">
+                        <button className="btn btn-dark btn-block" onClick={this.back} style={{marginLeft: "10px"}}>Back</button>
+                     </div>
                 </div>
             </div>
         )

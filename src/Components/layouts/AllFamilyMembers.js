@@ -29,13 +29,13 @@ function AllFamilyMembers() {
     return (
         <div className="container">
             <h2 className="text-center">Get Members information added by all users</h2>
-                <div className="row mx-auto">
-                    <div className="col-12 col-sm-2 offset-sm-4">
+                <div className="row ">
+                    <div className="col-auto offset-sm-5 my-3">
                         <div className="text-center">
                             <button className="btn btn-dark" onClick={onGetMembers}>Get Info</button>
                         </div>
                     </div>
-                    <div className="col-12 col-sm-2 ">
+                    <div className="col-auto my-3">
                         <div className="text-center">
                             <button className="btn btn-primary" onClick={onClear}>Clear</button>
                         </div>

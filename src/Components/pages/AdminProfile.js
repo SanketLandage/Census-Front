@@ -12,11 +12,11 @@ const AdminProfile= (props) => {
 
     useEffect(() => {
        console.log(location.pathname); // result: '/secondpage'
-       console.log(location.search); // result: '?query=abc'
-       console.log(location.state.detail); // result: 'some_value'
+    //    console.log(location.search); // result: '?query=abc'
+    //    console.log(location.state.detail); // result: 'some_value'
     }, [location]);
 
-    const adminData = location.state.detail;
+   // const adminData = location.state.detail;
 
     let history = useHistory();
     const onLogout = (e) => {
@@ -31,7 +31,7 @@ const AdminProfile= (props) => {
     return (
         <div className="container ">
             <div class="jumbotron">
-                <h1 class="display-4">Hello, {adminData.firstName}!</h1>
+                <h1 class="display-4">Hello,Admin!</h1>
                 <h3>Welcome to admin Dashboard!</h3>
                 <p class="lead">Capture information about the people residing in a particular 
                     village/town/city. Information related to their age, educational qualifications and kids. </p>
@@ -40,7 +40,7 @@ const AdminProfile= (props) => {
                 
             </div>
             <h2 className="text-center mt-4 mb-4">Information of people whose age is between 10-20 years</h2>
-            <AdminOps adminData={adminData}/>
+            <AdminOps />
             <hr />
                 <div className="container mt-4">
                     <h2 className="text-center mb-4">Get information of prople residing in same city</h2>
