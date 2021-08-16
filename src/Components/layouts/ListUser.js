@@ -48,6 +48,7 @@ class ListUser extends Component {
   addUser() {
     this.props.history.push("/addUser/_add");
   }
+  
   viewUser(){
     this.props.history.push("/viewUser")
   }

@@ -62,6 +62,7 @@ export class AddMember extends Component {
        await axios.post('http://localhost:8082/addmember' , famMember)
         .then(res=>{
             console.log(res.data);
+            this.props.getFamilyMembers();
         })
     }
     

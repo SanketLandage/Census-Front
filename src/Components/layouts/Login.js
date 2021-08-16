@@ -9,7 +9,8 @@ export class Login extends Component{
         super(props);
         this.state ={
             email : '',
-            password : ''
+            password : '',
+            isLoggedIn : false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,11 +36,14 @@ export class Login extends Component{
             console.log(res.data.role);
             const role =res.data.role;
             if(role === "ADMIN"){
+                this.setState({isLoggedIn : true});
                this.props.history.push({pathname : '/adminprofile' , state: { detail: res.data }});
             }
             else if(role === "USER"){
+                this.setState({isLoggedIn : true});
                 this.props.history.push({pathname : '/userprofile' , state: { detail: res.data }});
             }
+            
            
         })
         .catch(err => {

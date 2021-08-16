@@ -27,12 +27,15 @@ const MembersList= (props) => {
         .then(res =>{
             setFamilyMembers(res.data);
         });
-        
     }
    
     const deleteFamilyMembers = async (id) =>{
       await axios.delete(`${url}/deleteMemberById/${id}`)
     }
+
+    // const getMembersData = () => {
+    //     props.getMembersData();
+    // }
 
     return (
         <div className="container my-3">

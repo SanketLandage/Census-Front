@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
-import {  withRouter} from 'react-router-dom';
+import { withRouter} from 'react-router-dom';
 import AdminService from '../AdminService';
 
 
@@ -14,7 +14,7 @@ import AdminService from '../AdminService';
             email : '',
             password : '',
            gender : '',
-            age : '',
+            age : 0,
             numOfKids : 0,
             city : "",
             education : ""

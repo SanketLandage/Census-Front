@@ -1,9 +1,10 @@
 import React from 'react';
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation , useHistory } from "react-router-dom";
 import AdminOps from './AdminOps';
 import ListUser from '../layouts/ListUser';
 import SameCity from '../layouts/SameCity';
+import axios from 'axios';
 
 const AdminProfile= (props) => {
     const location = useLocation();
@@ -15,6 +16,17 @@ const AdminProfile= (props) => {
     }, [location]);
 
     const adminData = location.state.detail;
+
+    let history = useHistory();
+    const onLogout = (e) => {
+        axios.get('http://localhost:8082/logout')
+        .then(res =>{
+            console.log(res.data);
+            if(res.data === "You are logged Out"){
+                history.push('/logout');
+            }
+        })
+    }
     return (
         <div className="container ">
             <div class="jumbotron">
@@ -23,7 +35,7 @@ const AdminProfile= (props) => {
                 <p class="lead">Capture information about the people residing in a particular 
                     village/town/city. Information related to their age, educational qualifications and kids. </p>
                 <hr class="my-4"/>
-                <p></p>
+                <button className="btn btn-dark" onClick={onLogout}> Logout</button>
                 
             </div>
             <h2 className="text-center mt-4 mb-4">Information of people whose age is between 10-20 years</h2>

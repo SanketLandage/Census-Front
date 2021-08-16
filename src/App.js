@@ -11,6 +11,7 @@ import NotFound from './Components/pages/NotFound';
 import ListUser from './Components/layouts/ListUser';
 import ViewUser from './Components/layouts/ViewUser';
 import AddUser from './Components/layouts/AddUser';
+import logout from './Components/pages/logout';
 function App() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/listUser" component={ListUser}/>
             <Route exact path="/viewUser" component={ViewUser}/>
             <Route exact path="/addUser/_add" component={AddUser}/>
+            <Route exact path="/logout" component={logout} />
           </Switch>      
       </div>
     </Router>
