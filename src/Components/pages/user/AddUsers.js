@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const AddUser = ({match}) => {
     const url="http://localhost:8082";
@@ -17,6 +17,7 @@ const AddUser = ({match}) => {
             relationWithMember:'',
             user: `${match.params.id}`,
         });
+         // eslint-disable-next-line
     }, []);
 
     const history = useHistory();

@@ -69,8 +69,8 @@ const MembersList= (props) => {
                             <td>{values.relationWithMember}</td>
 
                             <td>
-                            
-                                <Link className="btn btn-primary my-1 mx-1 btn-sm" to={`/user/editUser/${props.userData.uid}`}>Edit</Link>
+                            {/* to={`/user/editUser/${props.userData.uid}`} */}
+                                <Link className="btn btn-primary my-1 mx-1 btn-sm" >Edit</Link>
                                 <Link className="btn btn-danger my-1 mx-1 btn-sm" onClick={() => {deleteFamilyMembers(values.memId);}} >Delete</Link>
                             </td>
                         </tr>

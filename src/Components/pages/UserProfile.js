@@ -2,7 +2,7 @@ import React from 'react';
 import AddMember  from '../layouts/AddMember';
 import MembersList  from '../layouts/MembersList';
 
-import { useLocation , useHistory, Link} from "react-router-dom";
+import { useLocation , useHistory} from "react-router-dom";
 import axios from 'axios';
 
 function UserProfile() {
