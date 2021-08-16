@@ -22,17 +22,18 @@ const MembersList= (props) => {
     //     setFamilyMembers(response.data);
     // }
     
-    const getFamilyMembers =()=>{
-        axios.get(`${url}/getAllMembers/${props.userData.uid}`)
+    const getFamilyMembers = async ()=>{
+       await axios.get(`${url}/getAllMembers/${props.userData.uid}`)
         .then(res =>{
             setFamilyMembers(res.data);
         });
         
     }
    
-    const deleteFamilyMembers = (id) =>{
-       axios.delete(`${url}/deleteMemberById/${id}`)
+    const deleteFamilyMembers = async (id) =>{
+      await axios.delete(`${url}/deleteMemberById/${id}`)
     }
+
     return (
         <div className="container my-3">
             {/* <Link className="btn btn-outline-primary my-3 float-right" to={`userprofile/addUser/${this.props.userData.uid}`}>Add Member</Link> */}

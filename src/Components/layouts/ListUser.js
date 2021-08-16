@@ -9,6 +9,7 @@ class ListUser extends Component {
 
     this.state = {
       users: [],
+      malecnt : 0
     };
 
     this.addUser = this.addUser.bind(this);
@@ -37,12 +38,13 @@ class ListUser extends Component {
     });
   }
 
+  
   componentDidMount() {
     AdminService.getUsers().then((res) => {
       this.setState({ users: res.data });
     });
   }
-
+  
   addUser() {
     this.props.history.push("/addUser/_add");
   }
@@ -67,6 +69,7 @@ class ListUser extends Component {
             Add User
           </Button>
         </div> */}
+        
         <div className="row">
             <div className="col-12 col-sm-12">
             <Table striped>
