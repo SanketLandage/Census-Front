@@ -19,9 +19,9 @@ function SameCity() {
             setUsers(res.data);
         }
     );
-        
+    setCity('');  
         e.preventDefault();
-        setCity('');
+        
    }
     
    const userStyle ={
@@ -29,8 +29,10 @@ function SameCity() {
     gridTemplateColumns : 'repeat(2 ,1fr )',
     gridGap : '1rem'
 
-}
-
+    }
+    const onClear = () =>{
+        setUsers([]);
+    }
     return (
         <div className="container">
             <div className="row">
@@ -39,6 +41,9 @@ function SameCity() {
                 </div>
                 <div className="col-12 col-sm-2 text-center">
                     <button className="btn btn-dark " onClick={onSubmitCity}>Get Users</button>
+                </div>
+                <div className="col-12 col-sm-2 text-center">
+                    <button className="btn btn-dark " onClick={onClear}>Clear</button>
                 </div>
             </div>
             <div className="mt-3">

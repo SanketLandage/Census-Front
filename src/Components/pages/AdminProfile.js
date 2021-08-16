@@ -5,6 +5,7 @@ import AdminOps from './AdminOps';
 import ListUser from '../layouts/ListUser';
 import SameCity from '../layouts/SameCity';
 import axios from 'axios';
+import AllFamilyMembers from '../layouts/AllFamilyMembers';
 
 const AdminProfile= (props) => {
     const location = useLocation();
@@ -45,6 +46,8 @@ const AdminProfile= (props) => {
                     <h2 className="text-center mb-4">Get information of prople residing in same city</h2>
                     <SameCity/>
                 </div>
+            <hr />
+            <AllFamilyMembers/>
             <hr />
             <ListUser/>
             <hr />
