@@ -60,10 +60,10 @@ class ViewUser extends Component {
                             <div className="col-sm-9"> { this.state.user.email }</div>
                         </div>
                         
-                        <div className = "row">
+                        {/* <div className = "row">
                             <label className="col-6 col-sm-3">  Password :  </label>
                             <div className="col-sm-9"> { this.state.user.password }</div>
-                        </div>
+                        </div> */}
                         
                         <div className = "row">
                             <label className="col-6 col-sm-3">  Gender :  </label>
@@ -74,7 +74,11 @@ class ViewUser extends Component {
                             <label className="col-6 col-sm-3">  Age : </label>
                             <div className="col-sm-9"> { this.state.user.age }</div>
                         </div>
-                        
+                        <div className = "row">
+                            <label className="col-6 col-sm-3">  NumOfKids :  </label>
+                            <div className="col-sm-9"> { this.state.user.numOfKids }</div>
+                            
+                        </div>
                         <div className = "row">
                             <label className="col-6 col-sm-3">  Educational Qualification :  </label>
                             <div className="col-sm-9"> { this.state.user.educationalQualification }</div>
@@ -85,11 +89,7 @@ class ViewUser extends Component {
                             <div className="col-sm-9"> { this.state.user.city }</div>
                         </div>
                         
-                        <div className = "row">
-                            <label className="col-6 col-sm-3">  NumOfKids :  </label>
-                            <div className="col-sm-9"> { this.state.user.numOfKids }</div>
-                            
-                        </div>
+                        
                         
                         
                     </div>

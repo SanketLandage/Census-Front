@@ -77,13 +77,13 @@ export class AddMember extends Component {
                         <div className="cardo">
                             <div className="card-body">
                                 <form onSubmit={this.handleSubmit}>
-                                    <h1 className="text-center">Add Member</h1>
+                                    <h2 className="text-center text-dark">Add Member</h2>
                                     <div className="row p-1">
                                         <div className="col-sm-4 col-12">
-                                            <label>FirstName :</label> 
+                                            <label>First Name :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                         <input type="text" placeholder="FirstName..." onChange={this.firsthandler}/><br />
+                                         <input className="form-control" type="text" placeholder="First Name..." onChange={this.firsthandler}/>
                                         </div>
                                     </div>
                                     <div className="row p-1">
@@ -91,7 +91,7 @@ export class AddMember extends Component {
                                             <label>Last Name :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <input type="text" placeholder="Last Name" onChange={this.lasthandler}/><br />
+                                            <input className="form-control" type="text" placeholder="Last Name..." onChange={this.lasthandler}/>
                                         </div>
                                     </div>
 
@@ -100,12 +100,12 @@ export class AddMember extends Component {
                                             <label>Gender :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <select onChange={this.genderhandler}>
+                                            <select className="form-control" onChange={this.genderhandler}>
                                             <option defaultValue>Select Gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                             <option value="other">Other</option>
-                                            </select><br />
+                                            </select>
                                         </div>
                                     </div>
 
@@ -114,7 +114,7 @@ export class AddMember extends Component {
                                             <label>Relation with Member :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <select onChange={this.relationhandler}>
+                                            <select className="form-control" onChange={this.relationhandler}>
                                                 <option defaultValue>Select Relation</option>
                                                 <option value="Father">Father</option>
                                                 <option value="Mother">Mother</option>
@@ -124,7 +124,7 @@ export class AddMember extends Component {
                                                 <option value="Sister">Sister</option>
                                                 <option value="Son">Son</option>
                                                 <option value="Daughter">Daughter</option>
-                                            </select><br />
+                                            </select>
                                         </div>
                                     </div>
 
@@ -133,7 +133,7 @@ export class AddMember extends Component {
                                             <label>Age :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <input type="text" placeholder="Age" onChange={this.agehandler} max="110" min="1" required/><br />
+                                            <input className="form-control" type="text" placeholder="Age" onChange={this.agehandler} max="110" min="1" required/>
                                         </div>
                                     </div>
 
@@ -142,13 +142,13 @@ export class AddMember extends Component {
                                             <label>Educational Qualification :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <select  defaultValue="Education" onChange={this.educationhandler}>
+                                            <select  className="form-control" defaultValue="Education" onChange={this.educationhandler}>
                                             <option defaultValue>Education</option>
                                             <option value="PostGraduation">PG and Above(Masters)</option>
                                             <option value="UnderGraduation">Under Graduation(Bachelors)</option>
                                             <option value="JuniorCollege">Junior College(12th)</option>
                                             <option value="HighSchool">High School(10th)</option>
-                                            </select><br />
+                                            </select>
                                         </div>
                                     </div>
                                     <input type="submit" className="btn btn-dark btn-block" value="Add Member" />

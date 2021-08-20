@@ -66,7 +66,7 @@ class ListUser extends Component {
                 <th> LastName </th>
                 <th> Email </th>
                 <th> Gender </th>
-                <th> Password </th>
+                {/* <th> Password </th> */}
                 <th> NumOfKids </th>
                 <th> City </th>
                 <th> Qualification </th>
@@ -81,7 +81,7 @@ class ListUser extends Component {
                   <td>{user.lastName}</td>
                   <td>{user.email}</td>
                   <td>{user.gender}</td>
-                  <td>{user.password}</td>
+                  {/* <td>{user.password}</td> */}
                   <td>{user.numOfKids}</td>
                   <td>{user.city}</td>
                   <td>{user.educationalQualification}</td>

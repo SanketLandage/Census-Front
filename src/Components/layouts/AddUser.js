@@ -121,19 +121,19 @@ import AdminService from '../AdminService';
 
     render() {
         return (
-            <div className="container mt-5">
+            <div className="container my-4">
                 <div className="row justify-content-center">
-                    <div className="col-md-5">
+                    <div className="col-md-6">
                         <div className="cardo">
                             <div className="card-body">
                             <form onSubmit={this.handleSubmit}>
-                                    <h1 className="text-center">Add User</h1>
+                                    <h1 className="text-center text-dark">Add User</h1>
                                     <div className="row p-1">
                                         <div className="col-sm-4 col-12">
                                         <label>FirstName :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                        <input type="text" value={this.state.firstName} onChange={this.changefirstNameHandler} placeholder="FirstName..." /><br />
+                                        <input className="form-control" type="text" value={this.state.firstName} onChange={this.changefirstNameHandler} placeholder="FirstName..." />
                                         </div>
                                     </div>
                                     
@@ -142,7 +142,7 @@ import AdminService from '../AdminService';
                                         <label>LastName :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                        <input type="text" value={this.state.lastName} onChange={this.changelastNameHandler} placeholder="LastName..." /><br />
+                                        <input className="form-control" type="text" value={this.state.lastName} onChange={this.changelastNameHandler} placeholder="LastName..." />
                                         </div>
                                     </div>
 
@@ -151,7 +151,7 @@ import AdminService from '../AdminService';
                                             <label>Email :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <input type="email" value={this.state.email} onChange={this.changeEmailHandler} placeholder="Email" required/><br />
+                                            <input className="form-control" type="email" value={this.state.email} onChange={this.changeEmailHandler} placeholder="Email" required/>
                                         </div>
                                     </div>
                                     <div className="row p-1">
@@ -159,7 +159,7 @@ import AdminService from '../AdminService';
                                             <label>Password :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <input type="password" value={this.state.password} onChange={this.changepasswordHandler} placeholder="Password..." required /><br />
+                                            <input className="form-control" type="password" value={this.state.password} onChange={this.changepasswordHandler} placeholder="Password..." required />
                                         </div>
                                     </div>
 
@@ -168,7 +168,7 @@ import AdminService from '../AdminService';
                                             <label>Age :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                         <input type="number" value={this.state.age} onChange={this.changeAgeHandler} placeholder="Enter your Age" /><br />
+                                         <input className="form-control" type="number" value={this.state.age} onChange={this.changeAgeHandler} placeholder="Enter your Age" />
                                         </div>
                                     </div>
 
@@ -177,12 +177,12 @@ import AdminService from '../AdminService';
                                             <label>Gender :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <select onChange={this.changegenderHandler} defaultValue="Select Gender">
+                                            <select className="form-control" onChange={this.changegenderHandler} defaultValue="Select Gender">
                                             <option defaultValue>Select Gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                             <option value="other">Other</option>
-                                            </select><br />
+                                            </select>
                                         </div>
                                     </div>
 
@@ -191,7 +191,7 @@ import AdminService from '../AdminService';
                                             <label>No. of Kids :</label> 
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                         <input type="number" value={this.state.numOfKids} onChange={this.changeNumofKidsHandler}  /><br />
+                                         <input className="form-control" type="number" value={this.state.numOfKids} onChange={this.changeNumofKidsHandler}  />
                                         </div>
                                     </div>
                                     
@@ -200,7 +200,7 @@ import AdminService from '../AdminService';
                                             <label>City :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <input type="text" value={this.state.city} onChange={this.changeCityhandler} placeholder="Residing city" required/><br />
+                                            <input className="form-control" type="text" value={this.state.city} onChange={this.changeCityhandler} placeholder="Residing city" required/>
                                         </div>
                                     </div>
 
@@ -209,7 +209,7 @@ import AdminService from '../AdminService';
                                             <label>Educational Qualification :</label>
                                         </div>
                                         <div className="col-sm-8 col-12">
-                                            <select onChange={this.changeEducationHandler} defaultValue="Education">
+                                            <select className="form-control" onChange={this.changeEducationHandler} defaultValue="Education">
                                             <option defaultValue>Education</option>
                                             <option value="PG">PG and Above</option>
                                             <option value="UG">Under Graduation</option>
@@ -218,8 +218,11 @@ import AdminService from '../AdminService';
                                             </select><br />
                                         </div>
                                     </div>
-                                    <button className="btn btn-success" onClick={this.saveUser}>Save</button>
-                                        <button className="btn btn-danger" onClick={this.cancel} style={{marginLeft: "10px"}}>Cancel</button>
+                                    <div className="text-center">
+                                        <button className="btn btn-success mx-3" onClick={this.saveUser}>Save</button>
+                                        <button className="btn btn-danger" onClick={this.cancel}>Cancel</button>
+                                    </div>
+                                    
                                         
                                 </form>
                             </div>
@@ -227,6 +230,8 @@ import AdminService from '../AdminService';
                     </div>
                 </div>
             </div>
+            
+
             
         )
     }

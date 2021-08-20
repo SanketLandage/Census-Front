@@ -43,7 +43,7 @@ const AdminProfile= (props) => {
             <AdminOps />
             <hr />
                 <div className="container mt-4">
-                    <h2 className="text-center mb-4">Get information of prople residing in same city</h2>
+                    <h2 className="text-center mb-4">Get information of people residing in same city</h2>
                     <SameCity/>
                 </div>
             <hr />
